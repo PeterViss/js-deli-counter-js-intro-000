@@ -19,18 +19,18 @@ function currentLine(deliLine){
     return ("The line is currently empty.")
   }
   else {
-
+      // create incomplete variable that we continuously add to
       var sumString = "The line is currently: ";
       // looping through the deliLine array.
       for(var i = 0; i < deliLine.length; i++){
-      // check if we are at the last element
-        if(i === deliLine.length -1) {
-          // if last element, do not add comma at the end
-          sumString = sumString + `${i + 1}. ${deliLine[i]}`;
+      // check if we are not at the last element
+        if(i !== deliLine.length - 1) {
+          // add comma at the end.
+          sumString = sumString + `${i + 1}. ${deliLine[i]}, `;
         }
         else {
-          // if not last element, add comma at the end.
-          sumString = sumString + `${i + 1}. ${deliLine[i]}, `;
+          // if last element, do not add comma at the end
+          sumString = sumString + `${i + 1}. ${deliLine[i]}`;
         }
     }
 
